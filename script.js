@@ -1,7 +1,7 @@
-// 1. プロトタイプ用の固定ログイン情報（誰に見られても良いデモ用）
+// 1. プロトタイプ用の固定ログイン情報（デモ用）
 const DUMMY_USER = {
     email: "test@example.com",
-    password: "secure-demo-2026-XyZ"
+    password: "secure-demo-2026-XyZ" // 以前の脆弱なパスワードから更新済み
 };
 
 /**
@@ -32,7 +32,7 @@ function handleLogin() {
     const emailInput = document.getElementById('email').value;
     const passInput = document.getElementById('password').value;
 
-    // 入力値と固定のログイン情報を比較（本番ではここでサーバーに問い合わせます）
+    // 入力値と固定のログイン情報を比較
     if (emailInput === DUMMY_USER.email && passInput === DUMMY_USER.password) {
         alert("ログイン成功！会員専用ページへ移動します。");
         
@@ -45,7 +45,7 @@ function handleLogin() {
             guestNav.style.display = 'none';
         }
     } else {
-        // 入力が間違っている場合のアラート
-        alert("エラー：メールアドレスまたはパスワードが違います。\n(Hint: test@example.com / password123)");
+        // 入力が間違っている場合のアラート（ヒントを現在のパスワードに修正）
+        alert("エラー：メールアドレスまたはパスワードが違います。\n(Hint: test@example.com / secure-demo-2026-XyZ)");
     }
 }
