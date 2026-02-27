@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Service - 会員限定サイト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">AI-Chat Service</div>
+        <nav id="guest-nav">
+            <button class="btn-login" onclick="showSection('login-page')">ログイン</button>
+            <button class="btn-signup">新規登録</button>
+        </nav>
+    </header>
+
+    <section id="top-page" class="active">
+        <div class="hero">
+            <h1>あなたのビジネスを加速させるAIチャット</h1>
+            <p>会員登録することで、最新のAIボットを24時間いつでも利用可能です。</p>
+            <button class="btn-main" onclick="showSection('login-page')">今すぐ始める</button>
+        </div>
+    </section>
+
+    <section id="login-page">
+        <div class="form-container">
+            <h2>ログイン</h2>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="メールアドレス" required>
+                <input type="password" id="password" placeholder="パスワード" required>
+                <button type="button" class="btn-submit" onclick="handleLogin()">ログインする</button>
+            </form>
+            <p class="switch-link">アカウントをお持ちでない方は<a href="#">こちら</a></p>
+        </div>
+    </section>
+
+    <section id="chat-page">
+        <div class="chat-header">
+            <h2>会員専用チャットルーム</h2>
+            <button onclick="location.reload()" class="btn-logout">ログアウト</button>
+        </div>
+        <div class="chat-area">
+            <div class="dummy-bot">
+                <p>🤖 ここにチャットボットが表示されます</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
