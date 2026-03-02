@@ -85,6 +85,184 @@
         </div>
     </section>
 
+    <section id="signup-page">
+    <div class="form-container signup-form-container">
+        <h2>新規会員登録</h2>
+        <p class="form-instruction">＊は必須項目です</p>
+        
+        <form id="signup-form">
+            <div class="form-group">
+                <label>ユーザー名 <span class="required">＊</span></label>
+                <input type="text" placeholder="例：halz_user" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>お名前 <span class="required">＊</span></label>
+                    <input type="text" placeholder="例：山田 太郎" required>
+                </div>
+                <div class="form-group">
+                    <label>お名前（ふりがな） <span class="required">＊</span></label>
+                    <input type="text" placeholder="例：やまだ たろう" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>メールアドレス <span class="required">＊</span></label>
+                <input type="email" placeholder="example@halz.co.jp" required>
+            </div>
+
+            <div class="form-group">
+                <label>会社名</label>
+                <input type="text" placeholder="株式会社〇〇">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>住所（都道府県） <span class="required">＊</span></label>
+                    <input type="text" placeholder="東京都" required
+                </div>
+                <div class="form-group">
+                    <label>住所（市区群以下）</label>
+                    <input type="text" placeholder="新宿区〇〇1-2-3">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>住所（建物名）</label>
+                <input type="text" placeholder="〇〇ビル 5F">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>電話番号 <span class="required">＊</span></label>
+                    <input type="tel" placeholder="09012345678" required>
+                </div>
+                <div class="form-group">
+                    <label>部署名</label>
+                    <input type="text" placeholder="人事部">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>役職 <span class="required">＊</span></label>
+                    <select required>
+                        <option value="">選択してください</option>
+                        <option value="経営者">経営者・役員クラス</option>
+                        <option value="執行役員">執行役員・事業部長クラス</option>
+                        <option value="部長">部長クラス</option>
+                        <option value="課長">課長クラス</option>
+                        <option value="係長">係長クラス</option>
+                        <option value="主任">主任クラス</option>
+                        <option value="一般クラス">一般クラス</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>職種 <span class="required">＊</span></label>
+                    <select required>
+                        <option value="">選択してください</option>
+                        <option value="経営者">経営者・経営層</option>
+                        <option value="人事">人事・労務・人材開発・総務・採用</option>
+                        <option value="広報">広報・法務・事務</option>
+                        <option value="企画">企画・マーケティング・調査分析</option>
+                        <option value="経理">経理・財務・会計</option>
+                        <option value="営業関連">営業関連</option>
+                        <option value="専門職">専門職（コンサルタント、金融、不動産、士業等）</option>
+                        <option value="技術職">技術職（IT、ソフト、電気電子、医療、バイオ、化学等）</option>
+                        <option value="クリエイティブ職">クリエイティブ職</option>
+                        <option value="販売">販売・サービス（小売、旅行、ホテル、医療福祉等）</option>
+                        <option value="公共サービス">公共サービス（公務員、団体職員等）</option>
+                        <option value="建築">建築・土木職関連</option>
+                        <option value="運輸">運輸・物流・警備職関連</option>
+                        
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>決裁権 <span class="required">＊</span></label>
+                    <select required>
+                        <option value="">選択してください</option>
+                        <option value="決裁者">決裁者</option>
+                        <option value="起案者">起案者</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>従業員数 <span class="required">＊</span></label>
+                    <input type="number" placeholder="例：50" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>業種 <span class="required">＊</span></label>
+                <select required>
+                    <option value="">選択してください</option>
+                    <option value="農林">農林・水産・鉱業</option>
+                    <option value="食品">食品</option>
+                    <option value="バイオ">バイオ</option>
+                    <option value="サービス">医薬品</option>
+                    <option value="化粧品">化粧品</option>
+                    <option value="繊維製品">繊維製品・アパレル・服飾</option>
+                    <option value="紙">紙・パルプ</option>
+                    <option value="建設">建設・設備・プラント</option>
+                    <option value="建築">建築・土木・プラント</option>
+                    <option value="住宅">住宅・インテリア</option>
+                    <option value="化学">化学</option>
+                    <option value="石油">石油・ゴム・ガラス・セメント・セラミック</option>
+                    <option value="鉄銅">鉄銅・金属繊維・非鉄筋属</option>
+                    <option value="機械">機械</option>
+                    <option value="半導体">半導体・電子・電気部品</option>
+                    <option value="家電">家電・AV機器・計測機器</option>
+                    <option value="精密機器">精密機器</option>
+                    <option value="医療機器">医療機器</option>
+                    <option value="ナノテクノロジー">ナノテクノロジー</option>
+                    <option value="輸送機器">輸送機器・自動車</option>
+                    <option value="その他メーカー">その他メーカー</option>
+                    <option value="電気">電気・ガス・水道・エネルギー</option>
+                    <option value="運輸">運輸・倉庫・輸送</option>
+                    <option value="通信">通信</option>
+                    <option value="情報処理">情報処理・ソフトウエア</option>
+                    <option value="商社(総合)">商社(総合)</option>
+                    <option value="商社(専門)">商社(専門)</option>
+                    <option value="販売">販売・小売</option>
+                    <option value="銀行業">銀行業</option>
+                    <option value="証券">証券</option>
+                    <option value="証券取引">証券取引</option>
+                    <option value="信販">信販・クレジット・リース・消費者金融</option>
+                    <option value="保険">保険</option>
+                    <option value="その他金融">その他金融</option>
+                    <option value="不動産">不動産</option>
+                    <option value="印刷">印刷</option>
+                    <option value="フードサービス">フードサービス</option>
+                    <option value="マスコミ関連">マスコミ関連</option>
+                    <option value="放送">放送・出版・映像・音響</option>
+                    <option value="広告">広告・デザイン・イベント</option>
+                    <option value="情報サービス">情報サービス・インターネット関連</option>
+                    <option value="医療">医療・福祉関係</option>
+                    <option value="教育">教育</option>
+                    <option value="美容">美容・理容</option>
+                    <option value="保安">保安・警備・清掃</option>
+                    <option value="コンサルタント">コンサルタント・シンクタンク</option>
+                    <option value="マーケティング">マーケティング・リサーチ・テレサービス</option>
+                    <option value="ゲーム">ゲーム・アミューズメント・スポーツ施設</option>
+                    <option value="旅行">旅行・ホテル</option>
+                    <option value="HRビジネス">HRビジネス</option>
+                    <option value="人事BPOサービス">人事BPOサービス</option>
+                    <option value="その他業種">その他業種</option>
+                    <option value="公共団体">公共団体・政府機関</option>
+                    
+                </select>
+            </div>
+
+            <button type="button" class="btn-submit" style="width: 100%; margin-top: 20px;" onclick="showSection('login-page')">内容を確認して登録する</button>
+        </form>
+        <p class="switch-link">すでにアカウントをお持ちの方は<a href="#" onclick="showSection('login-page')">こちら</a></p>
+    </div>
+    </section>
+
     <section id="chat-page">
         <div class="chat-container">
             <div class="chat-inner-header">
