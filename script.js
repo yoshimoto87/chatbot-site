@@ -22,6 +22,19 @@ function showSection(sectionId) {
         targetSection.classList.add('active');
     }
     
+
+    // ヘッダーの背景色を制御
+    const header = document.getElementById('main-header');
+    if (header) {
+        if (sectionId === 'top-page') {
+            // トップページならスクロール量に応じて変化させる（既存の挙動）
+            if (window.scrollY <= 50) header.classList.remove('scrolled');
+        } else {
+            // ログイン、登録、チャットページなら強制的に白背景にする
+            header.classList.add('scrolled');
+        }
+    }
+   
     // 常にページ最上部へスクロール
     window.scrollTo(0, 0);
 }
