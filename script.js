@@ -6,11 +6,15 @@ const DUMMY_USER = {
     password: "secure-demo-2026-XyZ"
 };
 
+// 現在どのセクションにいるかを保持する変数
+let currentSectionId = 'top-page';
+
 /**
  * 表示するセクションを切り替える関数
- * @param {string} sectionId - 表示したいセクションのID
  */
 function showSection(sectionId) {
+    currentSectionId = sectionId; // 現在のセクションを更新
+
     // 全てのセクションから active クラスを削除して非表示にする
     document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
@@ -21,20 +25,10 @@ function showSection(sectionId) {
     if (targetSection) {
         targetSection.classList.add('active');
     }
-    
 
-    // ヘッダーの背景色を制御
-    const header = document.getElementById('main-header');
-    if (header) {
-        if (sectionId === 'top-page') {
-            // トップページならスクロール量に応じて変化させる（既存の挙動）
-            if (window.scrollY <= 50) header.classList.remove('scrolled');
-        } else {
-            // ログイン、登録、チャットページなら強制的に白背景にする
-            header.classList.add('scrolled');
-        }
-    }
-   
+    // ヘッダーのスタイルを即座に更新
+    updateHeader();
+    
     // 常にページ最上部へスクロール
     window.scrollTo(0, 0);
 }
@@ -43,9 +37,6 @@ function showSection(sectionId) {
    2. 認証関連のイベント
    ========================================= */
 
-/**
- * ログインボタン押下時の処理
- */
 function handleLogin() {
     const emailInput = document.getElementById('email').value;
     const passInput = document.getElementById('password').value;
@@ -54,7 +45,6 @@ function handleLogin() {
         alert("ログイン成功！会員専用ページへ移動します。");
         showSection('chat-page');
         
-        // ログイン後はゲスト用ナビ（ログイン・新規登録ボタン）を隠す
         const guestNav = document.getElementById('guest-nav');
         if (guestNav) {
             guestNav.style.display = 'none';
@@ -64,28 +54,28 @@ function handleLogin() {
     }
 }
 
-/**
- * 【新規追加】新規登録ボタン押下時の処理（見た目のみ）
- */
 function handleSignup() {
-    // 実際はここでバリデーションなどを行いますが、プロトタイプなのでアラートのみ
     alert("アカウント登録（仮）が完了しました。\nログイン画面へ戻ります。");
     showSection('login-page');
 }
 
 /* =========================================
-   3. UI・スクロール制御
+   3. UI・スクロール制御（★ここを修正）
    ========================================= */
 
-window.addEventListener('scroll', function() {
-    // ヘッダーの背景色をスクロール量に応じて切り替え
+// ヘッダーの状態を一括管理する関数
+function updateHeader() {
     const header = document.getElementById('main-header') || document.querySelector('header');
-    
-    if (header) {
-        if (window.scrollY > 50) { 
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+    if (!header) return;
+
+    // トップページ以外、または、トップページで50px以上スクロールしている場合
+    if (currentSectionId !== 'top-page' || window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        // トップページかつ、一番上にいる場合のみ背景を消す
+        header.classList.remove('scrolled');
     }
-});
+}
+
+// スクロールするたびに実行
+window.addEventListener('scroll', updateHeader);
