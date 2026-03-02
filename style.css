@@ -161,3 +161,108 @@ header.scrolled .btn-signup { background: #007bff; color: #fff; }
 .chat-inner-header { background: #007bff; color: white; padding: 15px; display: flex; justify-content: space-between; }
 .chat-window { height: 400px; background: #f0f0f0; padding: 20px; overflow-y: auto; }
 .message-text { background: white; padding: 10px; border-radius: 10px; display: inline-block; }
+
+
+/* =========================================
+   6. 新規登録フォーム用カスタムスタイル
+   ========================================= */
+
+/* フォーム全体のコンテナ（項目が多いので幅を広めに設定） */
+.signup-form-container {
+    max-width: 800px; /* デフォルトの400pxから拡張 */
+    margin: 80px auto; 
+    padding: 40px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.form-instruction {
+    font-size: 0.85rem;
+    color: #e74c3c; /* 警告色（赤） */
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* 入力項目のグループ */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.required {
+    color: #e74c3c;
+    margin-left: 4px;
+}
+
+/* 2項目を横に並べるレイアウト（PC用） */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1; /* 左右均等な幅に */
+}
+
+/* 入力・選択項目の共通デザイン */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+/* フォーカス時の色変更 */
+input:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.15);
+}
+
+/* セレクトボックスの矢印カスタマイズ */
+select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* スマホ閲覧時：横並びを解除して縦1列にする */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .signup-form-container {
+        padding: 20px;
+        margin: 60px 15px;
+    }
+    
+    .main-title {
+        font-size: 1.6rem;
+    }
+}
