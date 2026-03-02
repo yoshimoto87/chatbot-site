@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Chat Service - 会員限定サイト(Demo)</title>
+    <title>iii HALZ - 生成AIと創る人事労務</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,8 +15,6 @@
             <a href="#" class="nav-item">お知らせ</a>
             <a href="#" class="nav-item">サービス</a>
             <a href="#" class="nav-item">会社概要</a>
-            <a href="#" class="nav-item">支社案内</a>
-            <a href="#" class="nav-item">採用情報</a>
             <a href="#" class="nav-item">お問い合わせ</a>
             <button class="btn-login" onclick="showSection('login-page')">ログイン</button>
             <button class="btn-signup">新規登録</button>
@@ -35,7 +33,7 @@
             </div>
         </div>
         
-        <section class="description-section">
+        <div class="description-section">
             <div class="container">
                 <span class="sub-title">Positioning</span>
                 <h2 class="main-title">企業における労務相談業務の位置付け</h2>
@@ -43,23 +41,23 @@
                     <p>労務管理やタレントマネジメントに関するITツールは数多く存在しますが、労務相談の分野には、これまで有効なITソリューションがほとんど存在しませんでした。労務相談ロボットは、アドホックな対応が求められる労務相談に活用できる、AIによる革新的なDXソリューションです。</p>
                 </div>
             </div>
-        </section>
+        </div>
         
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">⚡</div>
                 <h3>24時間即時回答</h3>
-                <p>深夜でも休日でも、あなたの質問にAIがすぐにお答えします。待たされるストレスはもうありません。</p>
+                <p>深夜でも休日でも、あなたの質問にAIがすぐにお答えします。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔍</div>
                 <h3>専門知識の提供</h3>
-                <p>膨大なデータから必要な情報を瞬時に検索。専属コンシェルジュのような体験を提供します。</p>
+                <p>膨大なデータから必要な情報を瞬時に検索。AIがサポートします。</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">📈</div>
                 <h3>高度な分析</h3>
-                <p>会員限定で、過去の相談履歴に基づいた、よりパーソナライズされたアドバイスが可能です。</p>
+                <p>会員限定で、過去の相談履歴に基づいたアドバイスが可能です。</p>
             </div>
         </div>
     </section>
@@ -75,7 +73,6 @@
                 <input type="password" id="password" placeholder="パスワード" required>
                 <button type="button" class="btn-submit" onclick="handleLogin()">ログインする</button>
             </form>
-            <p class="switch-link">アカウントをお持ちでない方は<a href="#">こちら</a></p>
         </div>
     </section>
 
@@ -87,11 +84,7 @@
             </div>
             <div class="chat-window" id="chat-window">
                 <div class="message bot">
-                    <div class="icon">🤖</div>
-                    <div class="message-text">こんにちは！会員限定デモ画面へようこそ。ここに実際のチャットボットが埋め込まれるイメージです。</div>
-                </div>
-                <div class="message user">
-                    <div class="message-text">ログインに成功しました！</div>
+                    <div class="message-text">こんにちは！何かお手伝いしましょうか？</div>
                 </div>
             </div>
             <div class="chat-input-area">
