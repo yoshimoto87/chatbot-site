@@ -37,7 +37,7 @@ function showSection(sectionId) {
         
         // ページ名がある場合のみ、パンくずの中身を「TOP > ページ名」に書き換える
         if (pageName) {
-            breadcrumb.innerHTML = `TOP <span>&gt;</span> ${pageName}`;
+            breadcrumb.innerHTML = `<a href="#" onclick="showSection('top-page'); return false;" class="breadcrumb-link">TOP</a> <span>&gt;</span> ${pageName}`;
         }
     }
 
