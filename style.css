@@ -1,187 +1,72 @@
 /* =========================================
-   1. 基本設定
+   1〜3. (既存の基本設定・ヘッダー・ヒーローセクション)
    ========================================= */
-body { 
-    font-family: 'Helvetica Neue', Arial, sans-serif; 
-    margin: 0; 
-    color: #333; 
-    background-color: #f8f9fa;
-}
-
-section { 
-    display: none; 
-    text-align: center; 
-}
-
-section.active { 
-    display: block; 
-}
+/* ... お手元のコードをそのまま維持 ... */
 
 /* =========================================
-   2. ヘッダー (常に最前面で固定)
+   4. サービス概要セクション (Positioning) ★新規追加
    ========================================= */
-header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px 5%; 
-    background: transparent; /* 初期は透明 */
-    position: fixed;        /* 画面上部に固定 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;          /* 他の要素より必ず上にくるように設定 */
-    box-sizing: border-box;
-    transition: all 0.4s ease;
-}
-
-/* スクロール後に付与されるクラス */
-header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    padding: 10px 5%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo { 
-    font-weight: bold; 
-    font-size: 1.5rem; 
-    color: #fff;            /* 初期は白 */
-    transition: color 0.4s;
-}
-
-header.scrolled .logo {
-    color: #333;            /* スクロール後は黒 */
-}
-
-nav {
-    display: flex;
-    align-items: center;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: #fff;
-    margin-right: 15px;
-    font-size: 0.85rem;
-    font-weight: bold;
-    white-space: nowrap;
-    transition: color 0.4s;
-}
-
-header.scrolled .nav-item {
-    color: #333;
-}
-
-/* ログイン・登録ボタン */
-button { 
-    cursor: pointer; 
-    border: none; 
-    border-radius: 5px; 
-    padding: 8px 15px; 
-    transition: all 0.3s;
-    white-space: nowrap;
-}
-
-.btn-login { 
-    background: transparent; 
-    color: #fff; 
-    border: 1px solid #fff; 
-    margin-left: 10px;
-}
-
-header.scrolled .btn-login {
-    color: #007bff;
-    border: 1px solid #007bff;
-}
-
-.btn-signup {
-    background: #fff;
-    color: #333;
-    margin-left: 10px;
-}
-
-header.scrolled .btn-signup {
-    background: #007bff;
-    color: #fff;
-}
-
-/* =========================================
-   3. ヒーローセクション (画像位置と文字の重なり)
-   ========================================= */
-.hero {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* 画面いっぱいの高さに広げる */
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: #000;
-}
-
-.hero-image-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 画像をエリアに合わせて切り抜く */
-    object-position: center; /* 中央を基準にする */
-    opacity: 0.5;      /* 背景として薄くする */
-}
-
-.hero-overlay {
-    position: relative;
-    z-index: 2;
-    color: #fff;
+.description-section {
+    padding: 100px 20px;
+    background-color: #fff; /* 背景を白にしてカード部分と差別化 */
     text-align: center;
-    padding: 0 20px;
-    max-width: 800px;
 }
 
-.hero-overlay h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+.description-section .container {
+    max-width: 900px; /* 文章が横に広がりすぎないように制限 */
+    margin: 0 auto;
 }
 
-.hero-overlay p {
+/* Positioning のオレンジ色の文字 */
+.sub-title {
+    color: #f39800; /* 画像に合わせたオレンジ */
+    font-weight: bold;
     font-size: 1.1rem;
-    margin-bottom: 30px;
+    display: block;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
-.btn-main {
-    background: #007bff;
-    color: white;
-    font-size: 1.2rem;
-    padding: 15px 40px;
+/* メインタイトル */
+.main-title {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 45px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* 説明文（pタグ） */
+.description-text p {
+    font-size: 1.15rem;
+    line-height: 2.0; /* 行間をたっぷり取って高級感を出す */
+    color: #444;
+    text-align: center;
+    margin: 0;
 }
 
 /* =========================================
-   4. メリット紹介カード等 (以下は既存を維持)
+   5. メリット紹介カード等 (背景を少し変えて区切りを明確に)
    ========================================= */
 .features {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 80px 20px;
-    background: #fff;
+    padding: 100px 20px;
+    background: #fdfdfd; /* 概要セクションの白と微かに変える */
     flex-wrap: wrap;
 }
 
 .feature-card {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 15px;
+    background: #fff; /* カード自体を白にする */
+    padding: 40px 30px;
+    border-radius: 20px;
     width: 280px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 影を少し柔らかく */
+    transition: transform 0.3s ease;
 }
 
-/* ...ログインフォームやチャット画面のCSSは以前のものをそのまま下に続けてください... */
+.feature-card:hover {
+    transform: translateY(-10px);
+}
