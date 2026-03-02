@@ -466,6 +466,77 @@ body:has(#top-page.active) #breadcrumb-container {
     display: inline-block;
 }
 
+/* =========================================
+   12. Q&A（よくある質問）スタイル
+   ========================================= */
+
+.qa-container {
+    text-align: left;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.qa-item {
+    padding: 30px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.qa-item:last-child {
+    border-bottom: none;
+}
+
+/* 質問(Q)と回答(A)の共通レイアウト */
+.qa-question, .qa-answer {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.qa-question {
+    margin-bottom: 20px;
+}
+
+/* 質問文のテキスト */
+.qa-question p {
+    font-weight: bold;
+    font-size: 1.15rem;
+    color: #333;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* 回答文のテキスト */
+.qa-answer p {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* QとAのアイコン（参考画像風の装飾） */
+.qa-icon {
+    font-weight: bold;
+    font-size: 1.1rem;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background-color: #f8f9fa; /* 薄いグレーの背景 */
+}
+
+/* 質問アイコンの色 */
+.qa-question .qa-icon {
+    color: #007bff;
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+/* 回答アイコンの色 */
+.qa-answer .qa-icon {
+    color: #f39800;
+    border: 1px solid rgba(243, 152, 0, 0.2);
+}
 /* スマホ対応 */
 @media (max-width: 600px) {
     .category-card {
