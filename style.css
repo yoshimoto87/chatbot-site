@@ -380,18 +380,18 @@ body:has(#top-page.active) #breadcrumb-container {
 
 /* セクション全体の背景を薄いグレーに設定 */
 .description-section, .support-section {
-    padding: 80px 20px;
+    padding: 100px 20px;
     background-color: #f5f7f9; /* 参考画像に近いグレー */
 }
 
 /* 白いカード（情報の塊）のデザイン */
 .category-card {
     background-color: #ffffff;
-    padding: 50px 40px;
+    padding: 60px 40px;
     border-radius: 16px;
-    max-width: 900px;
-    margin: 0 auto 40px; /* カード同士の縦の間隔 */
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
+    max-width: 950px;
+    margin: 0 auto 60px; /* カード同士の縦の間隔 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 柔らかい影 */
     text-align: center;
 }
 
@@ -450,19 +450,19 @@ body:has(#top-page.active) #breadcrumb-container {
 /* 登録フォーム内の各グループも白枠カードにする */
 .signup-form-container .category-card {
     text-align: left;
-    padding: 30px;
-    margin-bottom: 25px;
-    border: 1px solid #eee;
-    box-shadow: none; /* フォーム内は影を抑える */
+    padding: 40px;
+    margin-bottom: 40px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); /* フォーム内は影を抑える */
 }
 
 .signup-form-container h3 {
     font-size: 1.1rem;
     color: #333;
     margin-top: 0;
-    margin-bottom: 20px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #007bff;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #007bff;
     display: inline-block;
 }
 
