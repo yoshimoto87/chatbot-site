@@ -102,18 +102,20 @@ function switchFlow(element, type) {
     document.getElementById('flow-' + type).classList.add('active');
 }
 /* =========================================
-   メリットタブ制御とハイライト設定
+   追加: 導入メリットタブ切り替え
    ========================================= */
-.benefits-content {
-    display: none;
-    animation: fadeIn 0.4s ease forwards;
-}
+function switchBenefits(element, type) {
+    // 全メリットタブの非アクティブ化
+    document.querySelectorAll('.benefit-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    // クリックされたタブをアクティブ化
+    element.classList.add('active');
 
-.benefits-content.active {
-    display: block;
-}
-
-.text-red {
-    color: #cc0000;
-    font-weight: bold;
+    // 全メリットコンテンツの非アクティブ化
+    document.querySelectorAll('.benefits-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    // 対象のメリットコンテンツをアクティブ化
+    document.getElementById('benefits-' + type).classList.add('active');
 }
